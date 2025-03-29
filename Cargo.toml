@@ -4,8 +4,13 @@ version = "0.0.1"
 edition = "2024"
 
 [dependencies]
+colored = "3.0.0"
 git2 = "0.20.1"
 reqwest = { version = "0.12", features = ["blocking", "json"] }
-serde_json = "1.0.140"
-tempfile = "3.19.1"
+blocking = "1.6.1"
 dirs = "6.0.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+indicatif = "0.17.11"
+regex = "1.11.1"
+
