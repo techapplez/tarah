@@ -1,0 +1,133 @@
+use std::str;
+use std::io::{self, Write};
+use std::path::Path;
+use git2::Repository;
+use std::process::{exit, Command};
+use std::env;
+use std::fs;
+use colored::*;
+use serde_json::{from_str, Value};
+use serde::Deserialize;
+use std::cmp::Ordering;
+
+struct AurPackage {
+    name: String,
+    version: String,
+}
+
+fn main() {
+        let home = match env::var_os("HOME") {
+            Some(home) => home,
+        None => panic!("{}", "Failed to get $HOME".red().bold()),
+    };
+    let cloned_pkgs_path = Path::new(&home)
+        .join(".cache")
+        .join("tarah")
+        .join("git_cloney_thingy");
+
+    let _cleanup = Command::new("rm")
+        .args(&["-rf", cloned_pkgs_path.to_str().unwrap()])
+        .status();
+
+    let args: Vec<String> = env::args().collect();
+    if args.len() == 3 && args[1] == "-S" {
+        tarah_install_pkg(&args[2]);
+    } else if args.len() == 3 && args[1] == "-R" {
+        tarah_remove_pkg(&args[2]);
+    } else {
+        //asdad
+    }
+}
+
+fn cleanup() {
+    let home = match env::var_os("HOME") {
+        Some(home) => home,
+        None => panic!("{}", "Failed to get $HOME".red().bold()),
+    };
+
+    let cloned_pkgs_path = Path::new(&home)
+        .join(".cache")
+        .join("tarah")
+        .join("git_cloney_thingy");
+
+    let _cleanup = Command::new("rm")
+        .args(&["-rf", cloned_pkgs_path.to_str().unwrap()])
+        .status();
+}
+
+fn check_remote_git_repo(url: &str) -> bool {
+    let output = Command::new("git")
+        .args(&["ls-remote", "--exit-code", url])
+        .status()
+        .expect("Failed to execute command");
+
+    output.success()
+}
+
+fn tarah_remove_pkg(pack: &str) {
+    let remove = Command::new("sudo")
+        .args(&["pacman","-R", pack])
+        .status()
+        .expect("");
+
+    if !remove.success() {
+        let code = remove.code().unwrap();
+        let msg = format!("Couldn't remuv pkg {} bcuz of exit cod {}", pack, code);
+        println!("{}", msg.red().bold());
+
+    cleanup()
+    }
+}
+fn tarah_install_pkg(pack: &str) {
+    let default_url = "https://aur.archlinux.org/";
+    let package_url = format!("{}{}.git", default_url, pack);
+
+    if !check_remote_git_repo(package_url.as_str()) {
+        let msg = "Repo duzn exist";
+        println!("{}", msg.red().bold());
+        exit(1);
+    } else {
+        let msg = "Repo check passd";
+        println!("{}", msg.green());
+    }
+
+
+    let home = env::var_os("HOME").expect("Failed to get $HOME.");
+    let clone_path = Path::new(&home)
+        .join(".cache")
+        .join("tarah")
+        .join("git_cloney_thingy")
+        .join(pack);
+
+    let cloned_pkgs_path = Path::new(&home)
+        .join(".cache")
+        .join("tarah")
+        .join("git_cloney_thingy");
+
+    fs::create_dir_all(&clone_path)
+        .expect(&format!("Failed to create dir {:?}", clone_path));
+
+    let _repo = Repository::clone(&package_url, &clone_path)
+        .expect(&format!("{} no clone. Either you dumb or git fucked.", package_url));
+
+    let msg = format!("dun cloninn {} from {} to {}.", pack, package_url, clone_path.display());
+    println!("{}", msg.green());
+
+    let _op = Command::new("makepkg")
+        .current_dir(&clone_path)
+        .args(&["-si", "--noconfirm"])
+        .status()
+        .expect("");
+
+    if _op.success() {
+        println!("makepkg dun installin")
+    } else if !_op.success() {
+        let msg = "makepkg no want install";
+        println!("{}", msg.red().bold());
+    }
+
+    let _cleanup = Command::new("rm")
+        .args(&["-rf", cloned_pkgs_path.to_str().unwrap()]);
+
+
+}
