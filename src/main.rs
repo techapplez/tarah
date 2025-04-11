@@ -2,12 +2,12 @@ use std::path::Path;
 use std::process::{exit, Command};
 use std::env;
 use colored::*;
-use serde::Deserialize;
 mod install;
 mod cleanup;
 mod update;
 mod remove;
 mod sync;
+mod upgrade;
 
 fn main() {
     let home = match env::var_os("HOME") {
@@ -31,20 +31,18 @@ fn main() {
         install::tarah_install_pkg(&args[2]);
     } else if args.len() == 3 && args[1] == "-R" {
         remove::tarah_remove_pkg(&args[2]);
-    } else if args.len() > 1 && args[1] == "-U" {
-        //do something
-    } else if args.len() > 0 && args[1] == "-Sy" {
-        sync::sync();
+    } else if args.len() == 3 && args[1] == "-U" {
+        upgrade::upgrade(&args[2])
+    } else if args.len() >= 2 && args[1] == "-Sy" {
+        if args.len() > 2 {
+            sync::sync();
+            sync::supd(&args[2])
+        } else {
+            sync::sync();
+        }
+    } else if args.len() == 1 && args[1] == "-C" {
+        cleanup::cleanup();
     } else {
-        println!("Usage: tarah [-S package] [-R package] [-U package1 package2 ...]");
+        println!("Usagg: tarah [-S packag] [-R packag] [-U packag1 packag2 ...] [-Sy (package)]");
     }
 }
-
-
-
-
-fn usize_to_u64(value: usize) -> u64 {
-    value as u64
-} 
-
-

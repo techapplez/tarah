@@ -1,4 +1,4 @@
-use std::process::{exit, Command, Stdio};
+use std::process::Command;
 use std::fs;
 pub fn tarah_update() {
     let output = Command::new("sudo")
