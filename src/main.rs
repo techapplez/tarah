@@ -8,6 +8,7 @@ mod update;
 mod remove;
 mod sync;
 mod upgrade;
+mod else_pacman;
 
 fn main() {
     let home = match env::var_os("HOME") {
@@ -27,22 +28,37 @@ fn main() {
         .status();
 
     let args: Vec<String> = env::args().collect();
+    
     if args.len() == 3 && args[1] == "-S" {
         install::tarah_install_pkg(&args[2]);
-    } else if args.len() == 3 && args[1] == "-R" {
+    } 
+    
+    else if args.len() == 3 && args[1] == "-R" {
         remove::tarah_remove_pkg(&args[2]);
-    } else if args.len() == 3 && args[1] == "-U" {
+    } 
+    
+    else if args.len() == 3 && args[1] == "-U" {
         upgrade::upgrade(&args[2])
-    } else if args.len() >= 2 && args[1] == "-Sy" {
+    }
+    
+    else if args[1] == "-Sy" { 
         if args.len() > 2 {
             sync::sync();
             sync::supd(&args[2])
         } else {
             sync::sync();
         }
-    } else if args.len() == 1 && args[1] == "-C" {
+    }
+    
+    else if args.len() == 3 && args[1] == "-C" { 
         cleanup::cleanup();
-    } else {
-        println!("Usagg: tarah [-S packag] [-R packag] [-U packag1 packag2 ...] [-Sy (package)]");
+    }
+        
+    else if args[1] == "-Fuck" {
+        //Do Some() thing, Ok()?
+    }
+    
+    else {
+        else_pacman::else_pacman(&args[2]);
     }
 }

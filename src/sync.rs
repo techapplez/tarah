@@ -1,12 +1,8 @@
 use std::process::{exit, Command};
 use std::{env, fs};
 use std::path::Path;
-use std::thread::sleep;
-use std::time::Duration;
 use colored::*;
 use git2::Repository;
-use random_number::random;
-use spinners::{Spinner, Spinners};
 use crate::install::check_remote_git_repo;
 
 pub fn sync() {
@@ -38,11 +34,6 @@ pub fn supd(pack: &str) {
                     .args(&["pacman", "-S", pack])
                     .status();
             } else {
-                let n: u64 = random!(1..3);
-                let mut some_random_spinner_i_dont_have_a_name_for = Spinner::new(Spinners::Dots, "Syncinn AUR".into());
-                sleep(Duration::from_secs(n));
-                some_random_spinner_i_dont_have_a_name_for.stop();
-                println!("\r\n");
 
                 let default_url = "https://aur.archlinux.org/";
                 let package_url = format!("{}{}.git", default_url, pack);
