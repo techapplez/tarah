@@ -14,7 +14,7 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="Some() minor changes" />
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="Push issues" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,12 +69,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Cargo.Build `Run tarah`.executor": "Run",
     "Cargo.Run tarah.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ToolWindow.Commit.ShowToolbar": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/notchapplez/Documents/Scripts/Rust/tarah-helper",
@@ -175,7 +177,7 @@
       <workItem from="1744440991391" duration="1160000" />
       <workItem from="1744472694440" duration="1329000" />
       <workItem from="1744535220728" duration="532000" />
-      <workItem from="1744535768563" duration="382000" />
+      <workItem from="1744535768563" duration="714000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -209,7 +211,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744536084522</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Push issues">
+      <option name="closed" value="true" />
+      <created>1744536195109</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1744536195109</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Push issues">
+      <option name="closed" value="true" />
+      <created>1744536251823</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1744536251823</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Push issues">
+      <option name="closed" value="true" />
+      <created>1744536441978</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1744536441978</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,6 +255,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written..." />
     <MESSAGE value="Some() minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some() minor changes" />
+    <MESSAGE value="Push issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Push issues" />
   </component>
 </project>
