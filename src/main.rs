@@ -54,7 +54,7 @@ fn main() {
         cleanup::cleanup();
     }
         
-    else if args[1] == "-Fuck" {
+    else if args[1] == "-test" {
         //Do Some() thing, Ok()?
     }
 
