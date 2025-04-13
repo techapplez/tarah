@@ -57,7 +57,7 @@ fn main() {
     else if args[1] == "-Fuck" {
         //Do Some() thing, Ok()?
     }
-    
+
     else {
         else_pacman::else_pacman(&args[2]);
     }

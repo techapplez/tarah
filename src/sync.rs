@@ -19,8 +19,7 @@ pub fn sync() {
 }
 
 pub fn supd(pack: &str) {
-
-
+    
     let clean_pkg = format!("^{} ", pack);
 
     let pacman_test = Command::new("pacman")
