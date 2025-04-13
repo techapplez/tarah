@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
+  <component name="CargoProjects">
+    <cargoProject FILE="$PROJECT_DIR$/Cargo.toml">
+      <package file="$PROJECT_DIR$">
+        <enabledFeature name="default" />
+      </package>
+    </cargoProject>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="Some() minor changes" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:dev" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Rust File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;techapplez&quot;
+  }
+}</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="3285edb0-5796-4196-bcf2-dcb2befe2d0b" />
+  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/techapplez/tarah.git",
+    "accountId": "3285edb0-5796-4196-bcf2-dcb2befe2d0b"
+  }
+}]]></component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="QSn8n5oL" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2uoC3N5xehkKGCFEGyuNz63fdDR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Cargo.Build `Run tarah`.executor": "Run",
+    "Cargo.Run tarah.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.rust.reset.selective.auto.import": "true",
+    "ToolWindow.Commit.ShowToolbar": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/notchapplez/Documents/Scripts/Rust/tarah-helper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
+    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
+    "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Cargo.Run tarah">
+    <configuration name="Run tarah" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="buildProfileId" value="dev" />
+      <option name="command" value="run --package tarah --bin tarah" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test tarah" type="CargoCommandRunConfiguration" factoryName="Cargo Command">
+      <option name="command" value="test --workspace" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="RustProjectSettings">
+    <option name="toolchainHomeDirectory" value="/usr/bin" />
+  </component>
+  <component name="ShelveChangesManager">
+    <option name="remove_strategy" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="" />
+      <created>1742905340290</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742905340290</updated>
+      <workItem from="1742905341707" duration="5172000" />
+      <workItem from="1742912291298" duration="270000" />
+      <workItem from="1742914442143" duration="21000" />
+      <workItem from="1742927312415" duration="6000" />
+      <workItem from="1742927738958" duration="34000" />
+      <workItem from="1742927793703" duration="8341000" />
+      <workItem from="1742994869188" duration="1202000" />
+      <workItem from="1742996406402" duration="54000" />
+      <workItem from="1742996471575" duration="949000" />
+      <workItem from="1743091879355" duration="1652000" />
+      <workItem from="1743103797577" duration="69000" />
+      <workItem from="1743142512099" duration="1644000" />
+      <workItem from="1743157695061" duration="5041000" />
+      <workItem from="1743326753470" duration="192000" />
+      <workItem from="1743347379670" duration="710000" />
+      <workItem from="1743348158867" duration="2256000" />
+      <workItem from="1743445083402" duration="1130000" />
+      <workItem from="1743499853705" duration="3913000" />
+      <workItem from="1743586436394" duration="44000" />
+      <workItem from="1743595320493" duration="369000" />
+      <workItem from="1743595872714" duration="32000" />
+      <workItem from="1744189289197" duration="1718000" />
+      <workItem from="1744350501997" duration="1034000" />
+      <workItem from="1744359480106" duration="4023000" />
+      <workItem from="1744376060288" duration="1570000" />
+      <workItem from="1744438487337" duration="13000" />
+      <workItem from="1744440991391" duration="1160000" />
+      <workItem from="1744472694440" duration="1329000" />
+      <workItem from="1744535220728" duration="532000" />
+      <workItem from="1744535768563" duration="382000" />
+    </task>
+    <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
+      <option name="closed" value="true" />
+      <created>1744441486443</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744441486443</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Some() minor changes">
+      <option name="closed" value="true" />
+      <created>1744535265183</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744535265183</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Some() minor changes">
+      <option name="closed" value="true" />
+      <created>1744535793904</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1744535793904</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Some() minor changes">
+      <option name="closed" value="true" />
+      <created>1744536084522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1744536084522</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written..." />
+    <MESSAGE value="Some() minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some() minor changes" />
+  </component>
+</project>
