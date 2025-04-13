@@ -62,3 +62,6 @@ fn main() {
         else_pacman::else_pacman(&args[2]);
     }
 }
+
+
+//I like Rust!
