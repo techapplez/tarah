@@ -64,4 +64,4 @@ fn main() {
 }
 
 
-//I like Rust!
+//I like Rust! And i absolutely hate git
