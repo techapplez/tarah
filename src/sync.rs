@@ -36,8 +36,7 @@ pub fn supd(pack: &str) {
 
                 let default_url = "https://aur.archlinux.org/";
                 let package_url = format!("{}{}.git", default_url, pack);
-
-                if !check_remote_git_repo(package_url.as_str()) {
+                if !check_remote_git_repo(package_url.as_str()).expect("") {
                     eprintln!("{}", "repo duznt exist".red().bold());
                     exit(1);
                 } else {

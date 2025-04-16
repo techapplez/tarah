@@ -2,6 +2,7 @@ use std::path::Path;
 use std::process::{exit, Command};
 use std::env;
 use colored::*;
+
 mod install;
 mod cleanup;
 mod update;
@@ -18,6 +19,7 @@ fn main() {
             exit(1);
         }
     };
+
     let cloned_pkgs_path = Path::new(&home)
         .join(".cache")
         .join("tarah")
@@ -28,20 +30,19 @@ fn main() {
         .status();
 
     let args: Vec<String> = env::args().collect();
-    
-    if args.len() == 3 && args[1] == "-S" {
-        install::tarah_install_pkg(&args[2]);
-    } 
-    
+
+    // Modified package installation handling
+    if args.len() >= 3 && args[1] == "-S" {
+        let packages = args[2..].to_vec();
+        install::tarah_install_pkg(&packages);
+    }
     else if args.len() == 3 && args[1] == "-R" {
         remove::tarah_remove_pkg(&args[2]);
-    } 
-    
+    }
     else if args.len() == 3 && args[1] == "-U" {
         upgrade::upgrade(&args[2])
     }
-    
-    else if args[1] == "-Sy" { 
+    else if args[1] == "-Sy" {
         if args.len() > 2 {
             sync::sync();
             sync::supd(&args[2])
@@ -49,19 +50,18 @@ fn main() {
             sync::sync();
         }
     }
-    
-    else if args.len() == 3 && args[1] == "-C" { 
+    else if args.len() == 3 && args[1] == "-C" {
         cleanup::cleanup();
     }
-        
     else if args[1] == "-test" {
-        //Do Some() thing, Ok()?
+        println!("This is a test, {}", "lol");
     }
-
     else {
-        else_pacman::else_pacman(&args[2]);
+        for arg in args {
+            if arg.starts_with("-") || arg.starts_with("--") {
+            } else {
+                // There will be an update function
+            }
+        }
     }
 }
-
-
-//I fixed it!

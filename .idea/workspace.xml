@@ -14,7 +14,14 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="Push issues" />
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="I did it">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/install.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sync.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/sync.rs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,12 +54,12 @@
   <component name="GithubDefaultAccount">
     <option name="defaultAccountId" value="3285edb0-5796-4196-bcf2-dcb2befe2d0b" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/techapplez/tarah.git",
-    "accountId": "3285edb0-5796-4196-bcf2-dcb2befe2d0b"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/techapplez/tarah.git&quot;,
+    &quot;accountId&quot;: &quot;3285edb0-5796-4196-bcf2-dcb2befe2d0b&quot;
   }
-}]]></component>
+}</component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="QSn8n5oL" />
   </component>
@@ -88,7 +95,7 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "language.rust.cargo.check",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -137,6 +144,9 @@
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="/usr/bin" />
   </component>
+  <component name="RustfmtProjectSettings">
+    <option name="channel" value="nightly" />
+  </component>
   <component name="ShelveChangesManager">
     <option name="remove_strategy" value="true" />
   </component>
@@ -177,7 +187,14 @@
       <workItem from="1744440991391" duration="1160000" />
       <workItem from="1744472694440" duration="1329000" />
       <workItem from="1744535220728" duration="532000" />
-      <workItem from="1744535768563" duration="714000" />
+      <workItem from="1744535768563" duration="1358000" />
+      <workItem from="1744538250118" duration="157000" />
+      <workItem from="1744538419728" duration="121000" />
+      <workItem from="1744538578998" duration="693000" />
+      <workItem from="1744626475719" duration="115000" />
+      <workItem from="1744626758864" duration="622000" />
+      <workItem from="1744715543342" duration="2000" />
+      <workItem from="1744786948201" duration="4543000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -235,7 +252,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744536441978</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Push issues/damn it">
+      <option name="closed" value="true" />
+      <created>1744536770941</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1744536770941</updated>
+    </task>
+    <task id="LOCAL-00009" summary="I did it">
+      <option name="closed" value="true" />
+      <created>1744536810181</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1744536810181</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,6 +289,8 @@
     <MESSAGE value="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written..." />
     <MESSAGE value="Some() minor changes" />
     <MESSAGE value="Push issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Push issues" />
+    <MESSAGE value="Push issues/damn it" />
+    <MESSAGE value="I did it" />
+    <option name="LAST_COMMIT_MESSAGE" value="I did it" />
   </component>
 </project>
