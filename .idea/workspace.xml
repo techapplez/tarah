@@ -14,14 +14,7 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="I did it">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/install.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sync.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/sync.rs" afterDir="false" />
-    </list>
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="added tweaks to install.rs &#10;made it a bit faster" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +187,7 @@
       <workItem from="1744626475719" duration="115000" />
       <workItem from="1744626758864" duration="622000" />
       <workItem from="1744715543342" duration="2000" />
-      <workItem from="1744786948201" duration="4543000" />
+      <workItem from="1744786948201" duration="4899000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -268,7 +261,23 @@
       <option name="project" value="LOCAL" />
       <updated>1744536810181</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added tweaks to install.rs &#10;made it a bit faster">
+      <option name="closed" value="true" />
+      <created>1744791829887</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1744791829887</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added tweaks to install.rs &#10;made it a bit faster">
+      <option name="closed" value="true" />
+      <created>1744791850942</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1744791850942</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,6 +300,7 @@
     <MESSAGE value="Push issues" />
     <MESSAGE value="Push issues/damn it" />
     <MESSAGE value="I did it" />
-    <option name="LAST_COMMIT_MESSAGE" value="I did it" />
+    <MESSAGE value="added tweaks to install.rs &#10;made it a bit faster" />
+    <option name="LAST_COMMIT_MESSAGE" value="added tweaks to install.rs &#10;made it a bit faster" />
   </component>
 </project>

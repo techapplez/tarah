@@ -20,3 +20,5 @@ pub fn tarah_update() {
     let json = fs::read_to_string("/tmp/aur.tarah.json").unwrap();
     println!("{}", json);
 }
+
+//hello
