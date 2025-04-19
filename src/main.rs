@@ -11,6 +11,7 @@ mod sync;
 mod upgrade;
 mod else_pacman;
 
+
 fn main() {
     let home = match env::var_os("HOME") {
         Some(home) => home,
@@ -42,6 +43,11 @@ fn main() {
     else if args.len() == 3 && args[1] == "-U" {
         upgrade::upgrade(&args[2])
     }
+        
+    else if args[1] == "-Syu" {
+        //update::tarah_update()
+    }
+        
     else if args[1] == "-Sy" {
         if args.len() > 2 {
             sync::sync();
@@ -59,10 +65,14 @@ fn main() {
     else {
         for arg in args {
             if arg.starts_with("-") || arg.starts_with("--") {
-            } else {
-                // There will be an update function
+            } else if arg.is_empty() {
+                // There will be an update function here
+                //update::tarah_update()
+            }
+            
+            else {
+                //search
             }
         }
     }
 }
- //hello

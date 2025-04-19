@@ -11,5 +11,3 @@ pub fn else_pacman(arg: &str) {
         println!("Faild, awwwwwww")
     }
 }
-
-//hello
