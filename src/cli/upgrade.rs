@@ -1,7 +1,7 @@
 use colored::*;
 use std::process::Command;
 
-pub fn upgrade(pack: &str) {
+pub fn upgrade(pack: &str, debug: bool) {
     let process = Command::new("pacman").args(&["-U", &pack]).status();
     if process.expect("").success() {
         println!("{}", format!("{}", "Upgraded pkg".green()));

@@ -8,8 +8,6 @@ use rayon::prelude::*;
 pub fn check_remote_git_repo(url: &str) -> io::Result<bool> {
     let status = Command::new("git")
         .args(&["ls-remote", "--exit-code", url])
-        .stdout(Stdio::null()) 
-        .stderr(Stdio::null()) 
         .status()?;
 
     Ok(status.success())
@@ -21,7 +19,7 @@ enum PackageSource {
     Aur(String),
     NotFound(String),
 }
-pub fn tarah_install_pkg(packs: &[String]) {
+pub fn tarah_install_pkg(packs: &[String], debug: bool) {
 
     let results: Vec<Result<PackageSource, (String, String)>> = packs 
         .par_iter() 
@@ -73,7 +71,7 @@ pub fn tarah_install_pkg(packs: &[String]) {
     for pack in &not_found_pkgs {
         println!("Package {} found nowhere :(", pack);
     }
-
+    
     println!("Sync explicit: {:?}", printuse_pacman);
     println!("AUR explicit: {:?}", printuse_aur);
 
@@ -84,6 +82,7 @@ pub fn tarah_install_pkg(packs: &[String]) {
         pacman_args.extend(pkgs_str);
 
         let status = Command::new("sudo")
+            .arg("pacman")
             .args(&pacman_args)
             .status();
 

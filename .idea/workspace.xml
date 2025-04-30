@@ -15,13 +15,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="added tweaks to install.rs &#10;made it a bit faster">
+      <change afterPath="$PROJECT_DIR$/src/cli/gradient.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cli/helpers.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cli/search.rs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tui/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]1/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]1/shelved.patch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25__11_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25__11_07__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cleanup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cleanup.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/else_pacman.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/else_pacman.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/update.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/#main.rs#" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/#main.rs#" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cleanup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cleanup.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/else_pacman.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/else_pacman.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/install.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/install.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/remove.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/remove.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sync.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/sync.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/update.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/upgrade.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/upgrade.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +68,10 @@
     &quot;assignee&quot;: &quot;techapplez&quot;
   }
 }</component>
-  <component name="GithubDefaultAccount">
-    <option name="defaultAccountId" value="3285edb0-5796-4196-bcf2-dcb2befe2d0b" />
-  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/techapplez/tarah.git&quot;,
-    &quot;accountId&quot;: &quot;3285edb0-5796-4196-bcf2-dcb2befe2d0b&quot;
+    &quot;accountId&quot;: &quot;e8353266-c9b4-4ef7-ab59-02e3edc48aee&quot;
   }
 }</component>
   <component name="MacroExpansionManager">
@@ -71,6 +84,9 @@
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2uoC3N5xehkKGCFEGyuNz63fdDR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -84,10 +100,9 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ToolWindow.Commit.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/notchapplez/Documents/Scripts/Rust/tarah-helper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/notchapplez/RustroverProjects/tarah-helper&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -95,13 +110,15 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
     &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.disableDetachedFileInspection/home/notchapplez/Documents/Scripts/Rust/tarah-helper/src/tui/main.rs&quot;: &quot;true&quot;,
     &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/cli" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -198,7 +215,19 @@
       <workItem from="1744786948201" duration="5076000" />
       <workItem from="1744987608051" duration="2820000" />
       <workItem from="1744991162608" duration="722000" />
-      <workItem from="1745044898358" duration="373000" />
+      <workItem from="1745044898358" duration="968000" />
+      <workItem from="1745149059123" duration="1462000" />
+      <workItem from="1745305633998" duration="181000" />
+      <workItem from="1745400703933" duration="13000" />
+      <workItem from="1745400836871" duration="6000" />
+      <workItem from="1745832608093" duration="7260000" />
+      <workItem from="1745842148046" duration="613000" />
+      <workItem from="1745862563263" duration="1860000" />
+      <workItem from="1745910217511" duration="97000" />
+      <workItem from="1745910328058" duration="768000" />
+      <workItem from="1745911201898" duration="445000" />
+      <workItem from="1745918718633" duration="1353000" />
+      <workItem from="1745991793435" duration="909000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -296,7 +325,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744792023509</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added tweaks to install.rs &#10;made it a bit faster">
+      <option name="closed" value="true" />
+      <created>1745045296025</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1745045296025</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

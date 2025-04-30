@@ -4,13 +4,17 @@ version = "0.0.1"
 edition = "2024"
 
 [dependencies]
+clap = "4.5.37"
 colored = "3.0.0"
 git2 = "0.20.1"
-serde = { version = "1.0", features = ["derive"] }
-spinners = "4.1.1"
 random-number = "0.1.9"
-raur = "7.0.0"
 rayon = "1.10.0"
 
-#hello
+[[bin]]
+name = "cli"
+path = "src/cli/main.rs"
+
+[[bin]]
+name = "tui"
+path = "src/tui/main.rs"
 

@@ -5,7 +5,7 @@ use colored::*;
 use git2::Repository;
 use crate::install::check_remote_git_repo;
 
-pub fn sync() {
+pub fn sync(debug: bool) {
     let output = Command::new("sudo")
         .args(&["pacman"])
         .args(&["-Sy"])
@@ -18,7 +18,7 @@ pub fn sync() {
     }
 }
 
-pub fn supd(pack: &str) {
+pub fn supd(pack: &str, debug: bool) {
     
     let clean_pkg = format!("^{} ", pack);
 
@@ -59,7 +59,7 @@ pub fn supd(pack: &str) {
                     }
 
                     match Repository::clone(&package_url, &clone_path) {
-                        Ok(_) => println!("{}", format!("cloninn {} from {} to {}", pack, package_url, clone_path.to_str().unwrap()).green()),
+                     Ok(_) => println!("{}", format!("cloninn {} from {} to {}", pack, package_url, clone_path.to_str().unwrap()).green()),
                         Err(e) => {
                             eprintln!("Failed to clon repo: {}", e);
                             exit(1);
