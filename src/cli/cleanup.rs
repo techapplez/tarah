@@ -3,7 +3,7 @@ use std::path::Path;
 use std::process::{exit, Command};
 use colored::*;
 
-pub fn cleanup(debug: bool) {
+pub(crate) fn cleanup(debug: bool) {
     let home = match env::var_os("HOME") {
         Some(home) => home,
         None => {
@@ -23,10 +23,10 @@ pub fn cleanup(debug: bool) {
         .join("git_cloney_thingy");
 
     let status = Command::new("rm")
-        .args(&["-rf", cloned_pkgs_path.to_str().unwrap()])
+        .args(["-rf", cloned_pkgs_path.to_str().unwrap()])
         .status();
 
     if let Err(e) = status {
-        eprintln!("Faild to delete tarah cache: {}", e);
+        eprintln!("Faild to delete tarah cache: {e}");
     }
 }

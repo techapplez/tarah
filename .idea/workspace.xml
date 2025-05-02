@@ -14,30 +14,19 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="added tweaks to install.rs &#10;made it a bit faster">
-      <change afterPath="$PROJECT_DIR$/src/cli/gradient.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cli/helpers.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cli/search.rs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/tui/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]1/shelved.patch" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25,_11_07_[Changes]1/shelved.patch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25__11_07__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_13_04_25__11_07__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="added gradient functions and macros">
+      <change afterPath="$PROJECT_DIR$/src/cli/helpers/helpers.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/#main.rs#" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/#main.rs#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cleanup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cleanup.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/else_pacman.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/else_pacman.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/install.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/install.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/remove.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/remove.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sync.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/sync.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/update.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/upgrade.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/upgrade.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/cleanup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cleanup.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/else_pacman.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/else_pacman.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/gradient.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/gradient.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/helpers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/helpers.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/install.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/install.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/remove.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/remove.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/sync.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/sync.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/update.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/upgrade.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/upgrade.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +216,7 @@
       <workItem from="1745910328058" duration="768000" />
       <workItem from="1745911201898" duration="445000" />
       <workItem from="1745918718633" duration="1353000" />
-      <workItem from="1745991793435" duration="909000" />
+      <workItem from="1745991793435" duration="4564000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -333,7 +322,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745045296025</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added gradient functions and macros">
+      <option name="closed" value="true" />
+      <created>1745992897620</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745992897620</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +354,7 @@
     <MESSAGE value="Push issues/damn it" />
     <MESSAGE value="I did it" />
     <MESSAGE value="added tweaks to install.rs &#10;made it a bit faster" />
-    <option name="LAST_COMMIT_MESSAGE" value="added tweaks to install.rs &#10;made it a bit faster" />
+    <MESSAGE value="added gradient functions and macros" />
+    <option name="LAST_COMMIT_MESSAGE" value="added gradient functions and macros" />
   </component>
 </project>

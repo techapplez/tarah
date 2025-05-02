@@ -1,11 +1,11 @@
-use std::process::{Command as SysCommand, Stdio};
+use std::process::Command as SysCommand;
 use colored::Colorize;
 
 pub fn update(debug: bool) {
     let pacman = SysCommand::new("pacman")
-        .args(&["-Qem"])
+        .args(["-Qem"])
         .output()
-        .expect(&format!("{}", "Failed to run pacman".red()));
+        .unwrap_or_else(|_| panic!("{}", "Failed to run pacman".red()));
 
-    println!("{:?}", pacman)
+    println!("{pacman:?}")
 }

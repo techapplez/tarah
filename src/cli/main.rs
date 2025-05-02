@@ -65,7 +65,7 @@ fn pacman_ops(operations: &str, debug: bool) {
                 println!("-------------------------------------------------------------")
             },
             "-test" => {
-                println!("This is a test, {}", "lol");
+                println!("This is a test, lol");
                 println!("-------------------------------------------------------------")
             },
             _ => {
@@ -95,7 +95,7 @@ fn main() {
         .join("git_cloney_thingy");
 
     let _cleanup = Command::new("rm")
-        .args(&["-rf", cloned_pkgs_path.to_str().unwrap()])
+        .args(["-rf", cloned_pkgs_path.to_str().unwrap()])
         .status();
 
     let args: Vec<String> = env::args().collect();

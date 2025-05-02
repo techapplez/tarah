@@ -7,8 +7,8 @@ use crate::install::check_remote_git_repo;
 
 pub fn sync(debug: bool) {
     let output = Command::new("sudo")
-        .args(&["pacman"])
-        .args(&["-Sy"])
+        .args(["pacman"])
+        .args(["-Sy"])
         .status();
 
     if output.unwrap().success() {
@@ -20,22 +20,22 @@ pub fn sync(debug: bool) {
 
 pub fn supd(pack: &str, debug: bool) {
     
-    let clean_pkg = format!("^{} ", pack);
+    let clean_pkg = format!("^{pack} ");
 
     let pacman_test = Command::new("pacman")
-        .args(&["-Ss", clean_pkg.as_str()])
+        .args(["-Ss", clean_pkg.as_str()])
         .output();
 
     match pacman_test {
         Ok(output) => {
             if !output.stdout.is_empty() {
                 let _pacman_run = Command::new("sudo")
-                    .args(&["pacman", "-S", pack])
+                    .args(["pacman", "-S", pack])
                     .status();
             } else {
 
                 let default_url = "https://aur.archlinux.org/";
-                let package_url = format!("{}{}.git", default_url, pack);
+                let package_url = format!("{default_url}{pack}.git");
                 if !check_remote_git_repo(package_url.as_str()).expect("") {
                     eprintln!("{}", "repo duznt exist".red().bold());
                     exit(1);
@@ -54,21 +54,21 @@ pub fn supd(pack: &str, debug: bool) {
                         .join(pack);
 
                     if fs::create_dir_all(&clone_path).is_err() {
-                        eprintln!("Failed to create directory {:?}", clone_path);
+                        eprintln!("Failed to create directory {clone_path:?}");
                         exit(1);
                     }
 
                     match Repository::clone(&package_url, &clone_path) {
                      Ok(_) => println!("{}", format!("cloninn {} from {} to {}", pack, package_url, clone_path.to_str().unwrap()).green()),
                         Err(e) => {
-                            eprintln!("Failed to clon repo: {}", e);
+                            eprintln!("Failed to clon repo: {e}");
                             exit(1);
                         }
                     }
 
                     match Command::new("makepkg")
                         .current_dir(&clone_path)
-                        .args(&["-si", "--noconfirm"])
+                        .args(["-si", "--noconfirm"])
                         .status()
                     {
                         Ok(status) if status.success() => println!("{}", "makepkg done installing".green()),
@@ -79,7 +79,7 @@ pub fn supd(pack: &str, debug: bool) {
                     }
 
                     if Command::new("rm")
-                        .args(&["-rf", clone_path.to_str().unwrap()])
+                        .args(["-rf", clone_path.to_str().unwrap()])
                         .status()
                         .is_err()
                     {
@@ -89,7 +89,7 @@ pub fn supd(pack: &str, debug: bool) {
             }
         }
         Err(e) => {
-            eprintln!("pacman said: {}", e);
+            eprintln!("pacman said: {e}");
             exit(1);
         }
     }
