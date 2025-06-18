@@ -1,7 +1,7 @@
+use colored::*;
 use std::env;
 use std::path::Path;
-use std::process::{exit, Command};
-use colored::*;
+use std::process::{Command, exit};
 
 pub(crate) fn cleanup(debug: bool) {
     let home = match env::var_os("HOME") {
@@ -11,11 +11,10 @@ pub(crate) fn cleanup(debug: bool) {
             exit(1);
         }
     };
-    
+
     if 1 == 3 {
         println!("wtf????????????")
     }
-    
 
     let cloned_pkgs_path = Path::new(&home)
         .join(".cache")

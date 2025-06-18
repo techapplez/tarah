@@ -1,9 +1,9 @@
-use std::{env, fs, io};
-use std::path::PathBuf;
-use std::process::{Command, Stdio};
 use colored::*;
 use git2::Repository;
 use rayon::prelude::*;
+use std::path::PathBuf;
+use std::process::{Command, Stdio};
+use std::{env, fs, io};
 
 pub fn check_remote_git_repo(url: &str) -> io::Result<bool> {
     let status = Command::new("git")
@@ -88,10 +88,7 @@ pub fn tarah_install_pkg(packs: &[String], debug: bool) {
             .args(&pacman_args)
             .status();
         match status {
-            Ok(s) if s.success() => {
-                for pack in &printuse_pacman {
-                }
-            }
+            Ok(s) if s.success() => for pack in &printuse_pacman {},
             Ok(_s) => {}
             Err(_e) => {}
         }
@@ -105,10 +102,7 @@ pub fn tarah_install_pkg(packs: &[String], debug: bool) {
                 return;
             }
         };
-        let base_build_dir = home
-            .join(".cache")
-            .join("tarah")
-            .join("git_cloney_thingy");
+        let base_build_dir = home.join(".cache").join("tarah").join("git_cloney_thingy");
         if let Err(_e) = fs::create_dir_all(&base_build_dir) {
             return;
         }
@@ -127,11 +121,10 @@ pub fn tarah_install_pkg(packs: &[String], debug: bool) {
                         package_url,
                         clone_path.to_str().unwrap_or("INVALID_PATH")
                     )
-                        .green()
+                    .green()
                 );
                 if clone_path.exists() {
-                    if let Err(_e) = fs::remove_dir_all(&clone_path) {
-                    }
+                    if let Err(_e) = fs::remove_dir_all(&clone_path) {}
                 }
                 if let Err(e) = fs::create_dir_all(&clone_path) {
                     let err_msg = format!("Failed to create directory {clone_path:?}: {e}");
@@ -153,7 +146,10 @@ pub fn tarah_install_pkg(packs: &[String], debug: bool) {
                     .status();
                 match makepkg_status {
                     Ok(status) if status.success() => {
-                        println!("{}", format!("[{}] {}", pack, "makepkg done installing".green()));
+                        println!(
+                            "{}",
+                            format!("[{}] {}", pack, "makepkg done installing".green())
+                        );
                         if Command::new("rm")
                             .args(["-rf", clone_path.to_str().unwrap_or("")])
                             .status()

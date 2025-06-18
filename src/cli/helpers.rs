@@ -1,4 +1,4 @@
-mod helpers;
+use colored::Colorize;
 
 #[macro_export]
 macro_rules! debug_exec {
@@ -12,10 +12,10 @@ macro_rules! debug_exec {
     };
 }
 
-fn run_if_debug(debug: bool, action: impl Fn()) {
+pub fn rundebug(debug: bool, mut action: impl FnMut()) {
     if debug {
+        println!("{}", "DEBUG BEGIN".yellow());
         action();
+        println!("{}", "DEBUG END".yellow());
     }
 }
-
-

@@ -1,25 +1,21 @@
-use std::process::{exit, Command};
-use std::{env, fs};
-use std::path::Path;
+use crate::install::check_remote_git_repo;
 use colored::*;
 use git2::Repository;
-use crate::install::check_remote_git_repo;
+use std::path::Path;
+use std::process::{Command, exit};
+use std::{env, fs};
 
 pub fn sync(debug: bool) {
-    let output = Command::new("sudo")
-        .args(["pacman"])
-        .args(["-Sy"])
-        .status();
+    let output = Command::new("sudo").args(["pacman"]).args(["-Sy"]).status();
 
     if output.unwrap().success() {
-        println!("{}", format!("{}" ,"Synced lol".green()))
+        println!("{}", format!("{}", "Synced lol".green()))
     } else {
         eprintln!("{}", format!("{}", "Didnt sync aww".red().bold()))
     }
 }
 
 pub fn supd(pack: &str, debug: bool) {
-    
     let clean_pkg = format!("^{pack} ");
 
     let pacman_test = Command::new("pacman")
@@ -29,11 +25,8 @@ pub fn supd(pack: &str, debug: bool) {
     match pacman_test {
         Ok(output) => {
             if !output.stdout.is_empty() {
-                let _pacman_run = Command::new("sudo")
-                    .args(["pacman", "-S", pack])
-                    .status();
+                let _pacman_run = Command::new("sudo").args(["pacman", "-S", pack]).status();
             } else {
-
                 let default_url = "https://aur.archlinux.org/";
                 let package_url = format!("{default_url}{pack}.git");
                 if !check_remote_git_repo(package_url.as_str()).expect("") {
@@ -59,7 +52,16 @@ pub fn supd(pack: &str, debug: bool) {
                     }
 
                     match Repository::clone(&package_url, &clone_path) {
-                     Ok(_) => println!("{}", format!("cloninn {} from {} to {}", pack, package_url, clone_path.to_str().unwrap()).green()),
+                        Ok(_) => println!(
+                            "{}",
+                            format!(
+                                "cloninn {} from {} to {}",
+                                pack,
+                                package_url,
+                                clone_path.to_str().unwrap()
+                            )
+                            .green()
+                        ),
                         Err(e) => {
                             eprintln!("Failed to clon repo: {e}");
                             exit(1);
@@ -71,7 +73,9 @@ pub fn supd(pack: &str, debug: bool) {
                         .args(["-si", "--noconfirm"])
                         .status()
                     {
-                        Ok(status) if status.success() => println!("{}", "makepkg done installing".green()),
+                        Ok(status) if status.success() => {
+                            println!("{}", "makepkg done installing".green())
+                        }
                         _ => {
                             eprintln!("{}", "makepkg did not want to install".red().bold());
                             exit(1);

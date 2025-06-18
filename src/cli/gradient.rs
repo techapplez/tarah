@@ -1,8 +1,5 @@
+use super::helpers::rundebug;
 use random_number::random;
-use crate::debug_exec;
-use crate::helpers;
-
-
 
 pub fn gout(text: &str, debug: bool) {
     let aa = random!(50..255);
@@ -11,7 +8,11 @@ pub fn gout(text: &str, debug: bool) {
     let ba = random!(50..255);
     let bb = random!(50..255);
     let bc = random!(50..255);
-    
+
+    rundebug(debug, || {
+        println!("Colors: {},{},{} | {},{},{}", aa, ab, ac, ba, bb, bc);
+    });
+
     let start_color = (aa, ab, ac);
     let end_color = (ba, bb, bc);
 

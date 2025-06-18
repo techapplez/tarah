@@ -1,22 +1,29 @@
-use std::path::Path;
-use std::process::{exit, Command};
-use std::env;
 use colored::*;
-use crate::gradient::gout;
+use gradient::gout;
+use std::env;
+use std::error::Error;
+use std::ffi::OsString;
+use std::path::Path;
+use std::process::{Command, exit};
 
-mod install;
 mod cleanup;
-mod update;
-mod remove;
-mod sync;
-mod upgrade;
 mod else_pacman;
-mod search;
 mod gradient;
 mod helpers;
+mod install;
+mod remove;
+mod search;
+mod sync;
+mod update;
+mod upgrade;
 
-fn pacman_ops(operations: &str, debug: bool) {
-    let operations = operations.split("???").map(|s| s.trim()).collect::<Vec<_>>();
+type MyResult<T> = Result<T, Box<dyn Error>>;
+
+fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
+    let operations = operations
+        .split("???")
+        .map(|s| s.trim())
+        .collect::<Vec<_>>();
 
     for operation in operations {
         if operation.is_empty() {
@@ -36,38 +43,38 @@ fn pacman_ops(operations: &str, debug: bool) {
                     install::tarah_install_pkg(&packages, debug);
                     println!("-------------------------------------------------------------")
                 }
-            },
+            }
             "-R" => {
                 if parts.len() > 1 {
                     remove::tarah_remove_pkg(parts[1], debug);
                     println!("-------------------------------------------------------------")
                 }
-            },
+            }
             "-Sy" => {
                 sync::sync(debug);
                 if parts.len() > 1 {
                     sync::supd(parts[1], debug);
                     println!("-------------------------------------------------------------")
                 }
-            },
+            }
             "-Syu" => {
                 update::update(debug);
                 println!("-------------------------------------------------------------")
-            },
+            }
             "-U" => {
                 if parts.len() > 1 {
                     upgrade::upgrade(parts[1], debug);
                     println!("-------------------------------------------------------------")
                 }
-            },
+            }
             "-C" => {
                 cleanup::cleanup(debug);
                 println!("-------------------------------------------------------------")
-            },
+            }
             "-test" => {
                 println!("This is a test, lol");
                 println!("-------------------------------------------------------------")
-            },
+            }
             _ => {
                 if parts[0].starts_with('-') {
                     else_pacman::else_pacman(operation, debug);
@@ -78,15 +85,17 @@ fn pacman_ops(operations: &str, debug: bool) {
             }
         }
     }
+    Ok(())
 }
 
 fn main() {
-    let home = match env::var_os("HOME") {
-        Some(home) => home,
-        None => {
-            eprintln!("{}", "Failed to get $HOME".red().bold());
-            exit(1);
-        }
+    let home: OsString = if let Some(home) = env::var_os("HOME") {
+        home
+    } else if let None = env::var_os("HOME") {
+        eprintln!("{}", "Failed to get $HOME".red().bold());
+        exit(1);
+    } else {
+        unreachable!()
     };
 
     let cloned_pkgs_path = Path::new(&home)
@@ -108,11 +117,14 @@ fn main() {
         cmd_index = 2;
     }
 
-    gout(" _                  _
+    gout(
+        " _                  _
 | |_ __ _ _ __ __ _| |__
 | __/ _` | '__/ _` | '_ \\
 | || (_| | | | (_| | | | |
- \\__\\__,_|_|  \\__,_|_| |_|", dbg_state);
+ \\__\\__,_|_|  \\__,_|_| |_|",
+        dbg_state,
+    );
 
     if args.len() <= cmd_index {
         update::update(dbg_state);
@@ -120,5 +132,5 @@ fn main() {
     }
 
     let operations = args[cmd_index..].join(" ");
-    pacman_ops(&operations, dbg_state);
+    pacman_ops(&operations, dbg_state).unwrap();
 }
