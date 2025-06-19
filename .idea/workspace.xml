@@ -14,24 +14,9 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="added gradient functions and macros">
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="Added update function!!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/cleanup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cleanup.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/else_pacman.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/else_pacman.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/gradient.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/gradient.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/helpers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/helpers.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/helpers/helpers.rs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/install.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/install.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/remove.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/remove.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/search.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/search.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/sync.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/sync.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/update.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tui/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/tui/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +93,7 @@
     &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
     &quot;org.rust.disableDetachedFileInspection/home/notchapplez/Documents/Scripts/Rust/tarah-helper/src/tui/main.rs&quot;: &quot;true&quot;,
     &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -234,7 +219,16 @@
       <workItem from="1748666907759" duration="860000" />
       <workItem from="1748762885346" duration="25000" />
       <workItem from="1749202346609" duration="115000" />
-      <workItem from="1750256214194" duration="2473000" />
+      <workItem from="1750256214194" duration="2735000" />
+      <workItem from="1750266768292" duration="572000" />
+      <workItem from="1750267359198" duration="129000" />
+      <workItem from="1750267504115" duration="138000" />
+      <workItem from="1750267658713" duration="43000" />
+      <workItem from="1750267719277" duration="212000" />
+      <workItem from="1750268018892" duration="138000" />
+      <workItem from="1750268165533" duration="160000" />
+      <workItem from="1750268335535" duration="53000" />
+      <workItem from="1750314242100" duration="332000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -348,7 +342,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745992897620</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added update function!!!!">
+      <option name="closed" value="true" />
+      <created>1750258744704</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1750258744704</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +375,8 @@
     <MESSAGE value="I did it" />
     <MESSAGE value="added tweaks to install.rs &#10;made it a bit faster" />
     <MESSAGE value="added gradient functions and macros" />
-    <option name="LAST_COMMIT_MESSAGE" value="added gradient functions and macros" />
+    <MESSAGE value="Added update function!!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added update function!!!!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
