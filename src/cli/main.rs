@@ -19,7 +19,7 @@ mod upgrade;
 
 type MyResult<T> = Result<T, Box<dyn Error>>;
 
-fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
+async fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
     let operations = operations
         .split("???")
         .map(|s| s.trim())
@@ -58,7 +58,7 @@ fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
                 }
             }
             "-Syu" => {
-                update::update(debug);
+                update::update(debug).await;
                 println!("-------------------------------------------------------------")
             }
             "-U" => {
@@ -75,6 +75,10 @@ fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
                 println!("This is a test, lol");
                 println!("-------------------------------------------------------------")
             }
+            "--cleanup" => {
+                cleanup::cleanup(debug);
+                println!("-------------------------------------------------------------")
+            }
             _ => {
                 if parts[0].starts_with('-') {
                     else_pacman::else_pacman(operation, debug);
@@ -88,7 +92,8 @@ fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
     Ok(())
 }
 
-fn main() {
+#[tokio::main]
+async fn main() {
     let home: OsString = if let Some(home) = env::var_os("HOME") {
         home
     } else if let None = env::var_os("HOME") {
@@ -127,10 +132,12 @@ fn main() {
     );
 
     if args.len() <= cmd_index {
-        update::update(dbg_state);
+        update::update(dbg_state).await;
         return;
     }
 
     let operations = args[cmd_index..].join(" ");
-    pacman_ops(&operations, dbg_state).unwrap();
+    pacman_ops(&operations, dbg_state)
+        .await
+        .expect("Failed to run pacman operations")
 }

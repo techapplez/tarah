@@ -11,7 +11,7 @@ random-number = "0.1.9"
 rayon = "1.10.0"
 reqwest = { version = "0.12.20", features = ["json"] }
 serde_json = "1.0.140"
-tokio = "1.45.1"
+tokio = { version = "1.45.1", features = ["full"] }
 
 [[bin]]
 name = "cli"

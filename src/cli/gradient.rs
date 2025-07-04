@@ -9,9 +9,15 @@ pub fn gout(text: &str, debug: bool) {
     let bb = random!(50..255);
     let bc = random!(50..255);
 
-    rundebug(debug, || {
-        println!("Colors: {},{},{} | {},{},{}", aa, ab, ac, ba, bb, bc);
-    });
+    rundebug(
+        debug,
+        || {
+            println!("Colors: {},{},{} | {},{},{}", aa, ab, ac, ba, bb, bc);
+        },
+        || {
+            return;
+        },
+    );
 
     let start_color = (aa, ab, ac);
     let end_color = (ba, bb, bc);

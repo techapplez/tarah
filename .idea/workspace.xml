@@ -14,8 +14,14 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="Added update function!!!!">
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/cleanup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cleanup.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/gradient.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/gradient.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/helpers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/helpers.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/update.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -53,6 +59,9 @@
     &quot;accountId&quot;: &quot;e8353266-c9b4-4ef7-ab59-02e3edc48aee&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/cli/update.rs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="QSn8n5oL" />
   </component>
@@ -228,7 +237,12 @@
       <workItem from="1750268018892" duration="138000" />
       <workItem from="1750268165533" duration="160000" />
       <workItem from="1750268335535" duration="53000" />
-      <workItem from="1750314242100" duration="332000" />
+      <workItem from="1750314242100" duration="725000" />
+      <workItem from="1750315171121" duration="3439000" />
+      <workItem from="1750323030803" duration="615000" />
+      <workItem from="1750333384394" duration="6000" />
+      <workItem from="1751563129701" duration="63000" />
+      <workItem from="1751619565215" duration="2669000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -350,7 +364,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750258744704</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="fix">
+      <option name="closed" value="true" />
+      <created>1750315128614</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1750315128614</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,17 +398,7 @@
     <MESSAGE value="added tweaks to install.rs &#10;made it a bit faster" />
     <MESSAGE value="added gradient functions and macros" />
     <MESSAGE value="Added update function!!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added update function!!!!" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/src/cli/main.rs</url>
-          <line>122</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
 </project>
