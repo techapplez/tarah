@@ -14,15 +14,13 @@
     </cargoProject>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="fix">
+    <list default="true" id="3985826a-f48f-4cc7-b1cd-427103b66694" name="Changes" comment="fixed stuff, feature improvements">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/cleanup.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/cleanup.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/gradient.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/gradient.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/helpers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/helpers.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cli/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cli/update.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/update.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cli/search.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/cli/search.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +240,12 @@
       <workItem from="1750323030803" duration="615000" />
       <workItem from="1750333384394" duration="6000" />
       <workItem from="1751563129701" duration="63000" />
-      <workItem from="1751619565215" duration="2669000" />
+      <workItem from="1751619565215" duration="2841000" />
+      <workItem from="1751628323550" duration="155000" />
+      <workItem from="1751713222134" duration="71000" />
+      <workItem from="1751713312274" duration="338000" />
+      <workItem from="1751713672030" duration="1000" />
+      <workItem from="1751713752520" duration="691000" />
     </task>
     <task id="LOCAL-00001" summary="I didn't test the other Version... &#10;So here are the Bugfixes.&#10;(I did check this time :))&#10;&#10;-Note to self: Do not commit w/o testing the code you have written...">
       <option name="closed" value="true" />
@@ -372,7 +375,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750315128614</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fixed stuff, feature improvements">
+      <option name="closed" value="true" />
+      <created>1751622334920</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1751622334920</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,6 +410,7 @@
     <MESSAGE value="added gradient functions and macros" />
     <MESSAGE value="Added update function!!!!" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="fixed stuff, feature improvements" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed stuff, feature improvements" />
   </component>
 </project>

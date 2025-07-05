@@ -1,3 +1,4 @@
+use clap::{Parser, Subcommand};
 use colored::*;
 use gradient::gout;
 use std::env;
@@ -18,6 +19,51 @@ mod update;
 mod upgrade;
 
 type MyResult<T> = Result<T, Box<dyn Error>>;
+
+#[derive(Parser)]
+#[command(name = "tarah")]
+#[command(about = "AUR package manager")]
+#[command(long_about = None)]
+struct Cli {
+    #[arg(long, short = 'd', alias = "dbg")]
+    debug: bool,
+
+    #[command(subcommand)]
+    command: Option<Commands>,
+
+    #[arg(trailing_var_arg = true, allow_hyphen_values = true)]
+    raw_args: Vec<String>,
+}
+
+#[derive(Subcommand)]
+enum Commands {
+    #[command(name = "install", short_flag = 'S')]
+    Install {
+        packages: Vec<String>,
+    },
+    #[command(name = "remove", short_flag = 'R')]
+    Remove {
+        package: String,
+    },
+    #[command(name = "sync")]
+    Sync {
+        package: Option<String>,
+    },
+    #[command(name = "update")]
+    Update,
+    #[command(name = "upgrade", short_flag = 'U')]
+    Upgrade {
+        package: String,
+    },
+    #[command(name = "cleanup", short_flag = 'C')]
+    Cleanup,
+    #[command(name = "test")]
+    Test,
+    #[command(name = "search")]
+    Search {
+        query: String,
+    },
+}
 
 async fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
     let operations = operations
@@ -84,12 +130,27 @@ async fn pacman_ops(operations: &str, debug: bool) -> MyResult<()> {
                     else_pacman::else_pacman(operation, debug);
                     println!("-------------------------------------------------------------")
                 } else {
-                    println!("{}", format!("Unknown operation: {}", parts[0]).red());
+                    search::search(operation, debug);
                 }
             }
         }
     }
     Ok(())
+}
+
+fn parse_raw_args_for_debug_and_commands(args: &[String]) -> (bool, Vec<String>) {
+    let mut debug = false;
+    let mut filtered_args = Vec::new();
+
+    for arg in args {
+        if arg == "--debug" || arg == "-dbg" {
+            debug = true;
+        } else {
+            filtered_args.push(arg.clone());
+        }
+    }
+
+    (debug, filtered_args)
 }
 
 #[tokio::main]
@@ -112,15 +173,8 @@ async fn main() {
         .args(["-rf", cloned_pkgs_path.to_str().unwrap()])
         .status();
 
-    let args: Vec<String> = env::args().collect();
-
-    let mut dbg_state = false;
-    let mut cmd_index = 1;
-
-    if args.len() > 1 && (args[1] == "--debug" || args[1] == "-dbg") {
-        dbg_state = true;
-        cmd_index = 2;
-    }
+    let cli = Cli::parse();
+    let mut debug = cli.debug;
 
     gout(
         " _                  _
@@ -128,16 +182,57 @@ async fn main() {
 | __/ _` | '__/ _` | '_ \\
 | || (_| | | | (_| | | | |
  \\__\\__,_|_|  \\__,_|_| |_|",
-        dbg_state,
+        debug,
     );
 
-    if args.len() <= cmd_index {
-        update::update(dbg_state).await;
-        return;
-    }
+    match cli.command {
+        Some(Commands::Install { packages }) => {
+            install::tarah_install_pkg(&packages, debug);
+            println!("-------------------------------------------------------------")
+        }
+        Some(Commands::Remove { package }) => {
+            remove::tarah_remove_pkg(&package, debug);
+            println!("-------------------------------------------------------------")
+        }
+        Some(Commands::Sync { package }) => {
+            sync::sync(debug);
+            if let Some(pkg) = package {
+                sync::supd(&pkg, debug);
+            }
+            println!("-------------------------------------------------------------")
+        }
+        Some(Commands::Update) => {
+            update::update(debug).await;
+            println!("-------------------------------------------------------------")
+        }
+        Some(Commands::Upgrade { package }) => {
+            upgrade::upgrade(&package, debug);
+            println!("-------------------------------------------------------------")
+        }
+        Some(Commands::Cleanup) => {
+            cleanup::cleanup(debug);
+            println!("-------------------------------------------------------------")
+        }
+        Some(Commands::Test) => {
+            println!("This is a test, lol");
+            println!("-------------------------------------------------------------")
+        }
+        Some(Commands::Search { query }) => {
+            search::search(&query, debug);
+        }
+        None => {
+            if cli.raw_args.is_empty() {
+                update::update(debug).await;
+                return;
+            }
 
-    let operations = args[cmd_index..].join(" ");
-    pacman_ops(&operations, dbg_state)
-        .await
-        .expect("Failed to run pacman operations")
+            let (raw_debug, filtered_args) = parse_raw_args_for_debug_and_commands(&cli.raw_args);
+            debug = debug || raw_debug;
+
+            let operations = filtered_args.join(" ");
+            pacman_ops(&operations, debug)
+                .await
+                .expect("Failed to run pacman operations")
+        }
+    }
 }
